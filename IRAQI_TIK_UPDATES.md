@@ -1,15 +1,37 @@
-# IRAQI TIK updates
+# IRAQI TIK — GitHub manual updates
 
-Control file: `iraqi-tik.json` (main branch). `version.json` belongs to EXZO and is unchanged.
+هذه نسخة المشروع مع زر Check Updates والتحديث الإلزامي والتحكم من GitHub فقط.
+لا تحتاج Cloudflare أو موقع إدارة أو توكن داخل التطبيق.
 
-Build the supplied desktop project with BUILD_INSTALLER.bat. It produces dist/IRAQI_TIK_Setup.exe and dist/iraqi-tik.json containing the installer SHA256.
+## التشغيل والبناء على Windows
+1. فك ZIP بالكامل في مجلد مستقل؛ لا تشغل الملفات من داخل WinRAR.
+2. SETUP.bat: تجهيز احتياجات جهاز البناء.
+3. RUN.bat: تجربة التطبيق.
+4. BUILD_INSTALLER.bat: إنشاء المثبت الكامل وملف التحديث.
 
-For each update:
-1. Increase APP_VERSION in update_client.py and AppVersion in installer/IRAQI_TIK.iss to the same X.Y.Z.
-2. Build and test on Windows.
-3. Publish a GitHub Release tagged iraqi-tik-vX.Y.Z and upload IRAQI_TIK_Setup.exe.
-4. Only after the asset is available, replace iraqi-tik.json with the generated dist/iraqi-tik.json. Every newer advertised version is mandatory.
+الملفات الناتجة:
+- dist/IRAQI_TIK_Setup.exe: المثبت الذي توزعه على المستخدمين.
+- dist/iraqi-tik.json: بيانات الإصدار والرابط وبصمة المثبت؛ تتولد تلقائيًا بعد البناء.
+لا ترفع ZIP السورس إلى Releases بدل المثبت.
 
-Set enabled to false to block use, and set message to the message users should see. Restore enabled to true to resume. Checks happen at startup and every 60 seconds, subject to network/CDN delay. Missing or invalid manifest and offline state block new work until verification succeeds. Existing video processing is allowed to finish.
+## نشر النسخة الحالية 1.5.0
+افتح https://github.com/IRAQIEDITOR/iraqi-exzotiktok/releases/new
+أنشئ tag باسم iraqi-tik-v1.5.0 وارفع IRAQI_TIK_Setup.exe ثم Publish release.
+بعد نجاح الرفع استبدل iraqi-tik.json في جذر main بمحتوى الملف الناتج في dist.
+ملف version.json خاص بتطبيق EXZO؛ اتركه كما هو.
 
-The initial 1.5.0 control record has no download URL until the Windows installer is built and uploaded. Versions distributed before the updater was added cannot be controlled retroactively.
+## التحديث التالي
+ارفع APP_VERSION في update_client.py وAppVersion في installer/IRAQI_TIK.iss إلى نفس الرقم الجديد.
+أعد البناء؛ استخدم الوسم الموافق مثل iraqi-tik-v1.5.1 وارفع المثبت أولًا ثم JSON.
+أي إصدار أعلى إلزامي. لا تضع رقم إصدار أعلى قبل تجهيز المثبت الموافق.
+
+## إيقاف وتشغيل
+في iraqi-tik.json: enabled=false للإيقاف، enabled=true للتشغيل. احفظ Commit changes.
+message هي الرسالة التي تظهر عند الإيقاف.
+ملف JSON المولد يبدأ enabled=true؛ إذا تريد بقاء الإيقاف عدله إلى false قبل نشره.
+الفحص عند الدخول وكل 60 ثانية تقريبًا مع احتمال تأخر GitHub والشبكة.
+انقطاع الإنترنت أو فشل ملف التحكم يمنع الاستخدام إلى أن ينجح التحقق.
+
+## حدود التحقق
+تم التحقق من منطق التحديث محليًا؛ لم يتم بناء المثبت أو اختباره على Windows في هذه البيئة.
+لم تتغير ملفات معالجة الفيديو أو التصميم أو تسجيل الدخول في هذا التسليم.

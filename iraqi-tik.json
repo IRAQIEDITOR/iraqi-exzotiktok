@@ -1,9 +1,9 @@
 {
   "app_id": "iraqi-tik",
   "enabled": true,
-  "version": "1.5.0",
-  "download_url": "https://github.com/IRAQIEDITOR/iraqi-exzotiktok/releases/download/iraqi-tik-v1.5.0/IRAQI_TIK_Setup.exe",
-  "sha256": "ca1f6bfebbd5046cbac637a3a1419a99145d157a43f6265a40df3f27f22f9c70",
-  "notes": "IRAQI TIK 1.5.0",
+  "version": "1.5.1",
+  "download_url": "https://github.com/IRAQIEDITOR/iraqi-exzotiktok/releases/download/iraqi-tik-v1.5.1/IRAQI_TIK_Setup.exe",
+  "sha256": "f968fbae920c5d7041a08015e385c5f043af8f329e71909ca8f2666247eadbe2",
+  "notes": "IRAQI TIK 1.5.1",
   "message": "التطبيق متوقف مؤقتًا للصيانة."
 }

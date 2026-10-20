@@ -1,6 +1,6 @@
 {
   "app_id": "iraqi-tik",
-  "enabled": true,
+  "enabled": false,
   "version": "1.5.2",
   "download_url": "https://github.com/IRAQIEDITOR/iraqi-exzotiktok/releases/download/iraqi-tik-v1.5.2/IRAQI_TIK_Setup.exe",
   "sha256": "aeeebe80a416076a90949fabe3fdd609c9032f901ce28367931f68b2e85b3343",

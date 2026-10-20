@@ -1,0 +1,9 @@
+name = "iraqi-tik-admin"
+main = "worker.mjs"
+compatibility_date = "2026-10-01"
+workers_dev = true
+[vars]
+ALLOWED_ORIGIN = "https://iraqieditor.github.io"
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "iraqi-tik-update-staging"
